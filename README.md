@@ -1,0 +1,1 @@
+- Create low accuracy version of grabbing prices by web scraping.
