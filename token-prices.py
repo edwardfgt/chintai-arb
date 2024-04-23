@@ -39,5 +39,12 @@ def sol_price():
     else:
         print("Failed to retrieve the webpage: HTTP Status Code", response.status_code)
 
-eth_price()
-sol_price()
+chex_eth = float(eth_price()[1:])
+chex_sol = float(sol_price()[1:])
+
+
+percentage_diff_sol_to_eth = ((chex_eth - chex_sol) / chex_sol) * 100
+percentage_diff_eth_to_sol = ((chex_sol - chex_eth) / chex_eth) * 100
+
+print(f"Percentage difference (Solana to Ethereum): {percentage_diff_sol_to_eth:.2f}%")
+print(f"Percentage difference (Ethereum to Solana): {percentage_diff_eth_to_sol:.2f}%")
