@@ -1,7 +1,6 @@
 import requests
 from lxml import html
 
-
 def eth_price():
     eth_url = "https://www.geckoterminal.com/eth/pools/0xd3e9895230e8fb1460852f6cda3c4b926fbc29d8"
 
