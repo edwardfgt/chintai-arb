@@ -10,6 +10,12 @@ def eth_gas():
         raise ValueError("Alchemy URL not set in environment variables")
     w3 = Web3(Web3.HTTPProvider(alchemy_url))
 
-    print(w3.is_connected())
+    if w3.is_connected():
+        gas_price = w3.eth.gas_price
+        print(f"Current gas price: {gas_price} wei")
+        gas_price_gwei = w3.from_wei(gas_price, 'gwei')
+        print(f"Current gas price: {gas_price_gwei} gwei")
+    else:
+        print("Failed to connect to Ethereum network")
 
 eth_gas()
